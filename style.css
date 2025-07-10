@@ -1,4 +1,4 @@
-/* Estilo general del body: fondo negro, texto blanco, tipografía Arial */
+/* Body y estructura */
 body {
   background-color: #000;
   color: #fff;
@@ -14,14 +14,56 @@ body {
   gap: 2rem;
 }
 
-/* Contenedor principal */
 main {
   max-width: 800px;
   padding: 2rem;
   animation: fadeIn 1s ease-in;
 }
 
-/* Título principal "AMRICAN AUDIO" con animación slide & fade-in */
+/* Logo ASCII animado en esquina */
+.logo-ascii {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-family: monospace, monospace;
+  font-weight: bold;
+  font-size: 1.8rem;
+  cursor: default;
+  user-select: none;
+  display: flex;
+  gap: 0.1em;
+  z-index: 10000;
+  animation: pulse 4s infinite ease-in-out;
+}
+
+/* Colores alternados para las letras */
+.logo-ascii span:nth-child(odd) {
+  color: #3ddcff; /* celeste */
+  text-shadow:
+    0 0 8px #3ddcff,
+    0 0 20px #3ddcff;
+}
+
+.logo-ascii span:nth-child(even) {
+  color: #ff6fcf; /* rosado */
+  text-shadow:
+    0 0 8px #ff6fcf,
+    0 0 20px #ff6fcf;
+}
+
+/* Animación pulso para logo */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+/* Título con animación slide-fade */
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -45,7 +87,7 @@ h1 {
   }
 }
 
-/* Texto de bio con efecto "typing" */
+/* Bio con animación typing */
 .bio {
   font-size: 1rem;
   opacity: 0.9;
@@ -60,23 +102,31 @@ h1 {
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blinkCaret {
-  50% { border-color: transparent; }
-  100% { border-color: #3ddcff; }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #3ddcff;
+  }
 }
 
-/* Contenedor de los videos */
+/* Videos container */
 .videos {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* Estilo de los iframes de YouTube */
+/* Videos styling */
 .videos iframe {
   width: 100%;
   max-width: 720px;
@@ -86,13 +136,12 @@ h1 {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Zoom y sombra al pasar el mouse sobre los videos */
 .videos iframe:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px #3ddcffaa;
 }
 
-/* Contenedor de íconos de redes sociales */
+/* Footer redes sociales */
 footer {
   margin-top: 2rem;
   display: flex;
@@ -101,7 +150,6 @@ footer {
   font-size: 1.5rem;
 }
 
-/* Estilo de los enlaces de redes */
 footer a {
   color: white;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -115,50 +163,23 @@ footer a:hover {
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* Logo texto fijo en esquina superior izquierda */
-.logo-corner {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  font-size: 1.5rem;
-  cursor: default;
-  display: flex;
-  gap: 0.2rem;
-  animation: pulse 4s infinite ease-in-out;
-  user-select: none;
-  z-index: 1000;
-}
-
-/* Color celeste para la primera letra */
-.logo-blue {
-  color: #3ddcff; /* celeste brillante */
-}
-
-/* Color blanco para la segunda letra */
-.logo-white {
-  color: #fff;
-}
-
-/* Animación simple de pulso para el logo */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
+  0%,
+  100% {
+    transform: translateY(0);
   }
   50% {
-    opacity: 0.85;
-    transform: scale(1.04);
+    transform: translateY(-6px);
   }
 }
 
-/* Animación de entrada al cargar la página para main */
+/* Fade-in general */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
