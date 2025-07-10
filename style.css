@@ -1,0 +1,83 @@
+/* Estilo general del body: fondo negro, texto blanco, tipografía Arial */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Contenedor principal */
+main {
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Título principal "AMRICAN AUDIO" */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+/* Texto de bio */
+.bio {
+  font-size: 1rem;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* Contenedor de los videos */
+.videos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Estilo de los iframes de YouTube */
+.videos iframe {
+  width: 100%;
+  max-width: 720px;
+  height: 405px;
+  border: none;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+/* Animación ligera al pasar el mouse por los videos */
+.videos iframe:hover {
+  transform: scale(1.01);
+}
+
+/* Contenedor de íconos de redes sociales */
+footer {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+/* Estilo de los enlaces de redes */
+footer a {
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+footer a:hover {
+  opacity: 0.6;
+}
+
+/* Animación de entrada al cargar la página */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
