@@ -21,18 +21,52 @@ main {
   animation: fadeIn 1s ease-in;
 }
 
-/* Título principal "AMRICAN AUDIO" */
+/* Título principal "AMRICAN AUDIO" con animación slide & fade-in */
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: slideFadeIn 1.2s forwards ease-out;
 }
 
-/* Texto de bio */
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Texto de bio con efecto "typing" */
 .bio {
   font-size: 1rem;
-  opacity: 0.8;
+  opacity: 0.9;
   line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #3ddcff;
+  width: 0;
+  animation: typing 3.5s steps(60, end) forwards, blinkCaret 0.75s step-end infinite;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blinkCaret {
+  50% { border-color: transparent; }
+  100% { border-color: #3ddcff; }
 }
 
 /* Contenedor de los videos */
@@ -49,12 +83,13 @@ h1 {
   height: 405px;
   border: none;
   border-radius: 4px;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Animación ligera al pasar el mouse por los videos */
+/* Zoom y sombra al pasar el mouse sobre los videos */
 .videos iframe:hover {
-  transform: scale(1.01);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #3ddcffaa;
 }
 
 /* Contenedor de íconos de redes sociales */
@@ -69,14 +104,60 @@ footer {
 /* Estilo de los enlaces de redes */
 footer a {
   color: white;
-  transition: opacity 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
 }
 
 footer a:hover {
-  opacity: 0.6;
+  color: #3ddcff;
+  animation: bounce 0.4s;
+  transform-origin: center bottom;
 }
 
-/* Animación de entrada al cargar la página */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Logo texto fijo en esquina superior izquierda */
+.logo-corner {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: default;
+  display: flex;
+  gap: 0.2rem;
+  animation: pulse 4s infinite ease-in-out;
+  user-select: none;
+  z-index: 1000;
+}
+
+/* Color celeste para la primera letra */
+.logo-blue {
+  color: #3ddcff; /* celeste brillante */
+}
+
+/* Color blanco para la segunda letra */
+.logo-white {
+  color: #fff;
+}
+
+/* Animación simple de pulso para el logo */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+}
+
+/* Animación de entrada al cargar la página para main */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
