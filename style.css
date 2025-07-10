@@ -26,22 +26,21 @@ main {
   top: 20px;
   left: 20px;
   font-family: monospace, monospace;
-  font-weight: bold;
-  font-size: 1.8rem;
+  font-weight: 900;
+  font-size: 2rem;
   cursor: default;
   user-select: none;
   display: flex;
-  gap: 0.1em;
-  z-index: 10000;
+  gap: 0.15em;
+  z-index: 9999;
   animation: pulse 4s infinite ease-in-out;
-}
-
-/* Colores alternados para las letras */
-.logo-ascii span:nth-child(odd) {
-  color: #3ddcff; /* celeste */
   text-shadow:
     0 0 8px #3ddcff,
     0 0 20px #3ddcff;
+}
+
+.logo-ascii span:nth-child(odd) {
+  color: #3ddcff; /* celeste */
 }
 
 .logo-ascii span:nth-child(even) {
