@@ -30,35 +30,22 @@ main {
   font-size: 2rem;
   cursor: default;
   user-select: none;
-  display: flex;
-  gap: 0.15em;
   z-index: 9999;
-  animation: pulse 4s infinite ease-in-out;
-  text-shadow:
-    0 0 8px #3ddcff,
-    0 0 20px #3ddcff;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 10ch; /* ancho del contenedor igual a longitud del texto */
+  border-right: 2px solid red;
+  animation: moveRightLeft 4s ease-in-out infinite;
+  color: red;
 }
 
-.logo-ascii span:nth-child(odd) {
-  color: #3ddcff; /* celeste */
-}
-
-.logo-ascii span:nth-child(even) {
-  color: #ff6fcf; /* rosado */
-  text-shadow:
-    0 0 8px #ff6fcf,
-    0 0 20px #ff6fcf;
-}
-
-/* Animación pulso para logo */
-@keyframes pulse {
+/* Animación que mueve el texto horizontalmente de izquierda a derecha y vuelve */
+@keyframes moveRightLeft {
   0%, 100% {
-    opacity: 1;
-    transform: scale(1);
+    transform: translateX(0);
   }
   50% {
-    opacity: 0.85;
-    transform: scale(1.05);
+    transform: translateX(10px);
   }
 }
 
