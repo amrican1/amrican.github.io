@@ -20,35 +20,6 @@ main {
   animation: fadeIn 1s ease-in;
 }
 
-/* Logo ASCII animado en esquina */
-.logo-ascii {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-family: monospace, monospace;
-  font-weight: 900;
-  font-size: 2rem;
-  cursor: default;
-  user-select: none;
-  z-index: 9999;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 10ch; /* ancho del contenedor igual a longitud del texto */
-  border-right: 2px solid red;
-  animation: moveRightLeft 4s ease-in-out infinite;
-  color: red;
-}
-
-/* Animación que mueve el texto horizontalmente de izquierda a derecha y vuelve */
-@keyframes moveRightLeft {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-}
-
 /* Título con animación slide-fade */
 h1 {
   font-size: 2.5rem;
