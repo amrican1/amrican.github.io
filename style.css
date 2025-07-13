@@ -92,7 +92,7 @@ h1 {
   border: none;
   border-radius: 4px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-origin: center center;
+  transform-origin: center;
   will-change: transform;
   z-index: 1;
   position: relative;
@@ -224,11 +224,36 @@ footer a:hover {
   }
 }
 
-/* Contact form */
-.contact {
-  margin-top: 3rem;
-  text-align: center;
+/* Email visible */
+.email-visible {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #3ddcff;
+  cursor: pointer;
+  user-select: all; /* facilita copiar */
+  font-weight: bold;
 }
 
-.contact h2 {
-  color:
+.email-visible:hover {
+  color: #21b7e2;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .videos iframe {
+    height: 200px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .bio {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 1.2rem;
+    gap: 1rem;
+  }
+}
