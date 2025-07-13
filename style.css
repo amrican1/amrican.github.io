@@ -20,7 +20,7 @@ main {
   animation: fadeIn 1s ease-in;
 }
 
-/* Título con animación */
+/* Título con animación slide-fade */
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -44,7 +44,7 @@ h1 {
   }
 }
 
-/* Bio animada */
+/* Bio con animación typing */
 .bio {
   font-size: 1rem;
   opacity: 0.9;
@@ -78,13 +78,14 @@ h1 {
   }
 }
 
-/* Videos */
+/* Videos container */
 .videos {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
+/* Videos styling corregido */
 .videos iframe {
   width: 100%;
   max-width: 720px;
@@ -124,11 +125,52 @@ h1 {
   opacity: 0.85;
 }
 
+.asset-image-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.asset-image {
+  max-width: 100%;
+  width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px #3ddcff44;
+}
+
+.asset-image-link:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px #3ddcffaa;
+}
+
+.asset-audio {
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+}
+
+.asset-audio p {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #3ddcff;
+}
+
+audio {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 4px;
+}
+
+/* Botones para links */
 .asset-links {
   display: flex;
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .asset-links .btn {
@@ -145,7 +187,7 @@ h1 {
   background-color: #21b7e2;
 }
 
-/* Footer */
+/* Footer redes sociales */
 footer {
   margin-top: 2rem;
   display: flex;
