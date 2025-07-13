@@ -20,7 +20,7 @@ main {
   animation: fadeIn 1s ease-in;
 }
 
-/* Título con animación slide-fade */
+/* Título con animación */
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -44,7 +44,7 @@ h1 {
   }
 }
 
-/* Bio con animación typing */
+/* Bio typing */
 .bio {
   font-size: 1rem;
   opacity: 0.9;
@@ -142,6 +142,24 @@ h1 {
   box-shadow: 0 0 20px #3ddcffaa;
 }
 
+.asset-audio {
+  margin-top: 2rem;
+}
+
+.asset-audio p {
+  font-weight: bold;
+  color: #3ddcff;
+  margin-bottom: 1rem;
+}
+
+.asset-audio iframe {
+  border-radius: 6px;
+  box-shadow: 0 0 10px #3ddcff44;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Botones */
 .asset-links {
   display: flex;
   gap: 1rem;
@@ -186,8 +204,7 @@ footer a:hover {
 }
 
 @keyframes bounce {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
@@ -195,7 +212,7 @@ footer a:hover {
   }
 }
 
-/* Fade-in general */
+/* Fade */
 @keyframes fadeIn {
   from {
     opacity: 0;
