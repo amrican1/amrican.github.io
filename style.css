@@ -1,54 +1,234 @@
+/* Body y estructura */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+main {
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Título con animación */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: slideFadeIn 1.2s forwards ease-out;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bio typing */
+.bio {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #3ddcff;
+  width: 0;
+  animation: typing 3.5s steps(60, end) forwards, blinkCaret 0.75s step-end infinite;
+  margin: 0 auto;
+  max-width: 600px;
+  position: relative;
+  z-index: 3;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCaret {
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #3ddcff;
+  }
+}
+
+/* Videos */
+.videos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.videos iframe {
+  width: 100%;
+  max-width: 720px;
+  height: 405px;
+  border: none;
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center center;
+  will-change: transform;
+  z-index: 1;
+  position: relative;
+}
+
+.videos iframe:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px #3ddcffaa;
+  z-index: 2;
+}
+
+/* Assets */
+.assets {
+  margin-top: 3rem;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.assets h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #3ddcff;
+}
+
+.asset-description {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.asset-image-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.asset-image {
+  max-width: 100%;
+  width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px #3ddcff44;
+}
+
+.asset-image-link:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px #3ddcffaa;
+}
+
+.asset-audio {
+  margin-top: 2rem;
+}
+
+.asset-audio p {
+  font-weight: bold;
+  color: #3ddcff;
+  margin-bottom: 1rem;
+}
+
+.asset-audio iframe {
+  border-radius: 6px;
+  box-shadow: 0 0 10px #3ddcff44;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Botones */
+.asset-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.asset-links .btn {
+  background-color: #3ddcff;
+  color: #000;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.asset-links .btn:hover {
+  background-color: #21b7e2;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+footer a {
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+footer a:hover {
+  color: #3ddcff;
+  animation: bounce 0.4s;
+  transform-origin: center bottom;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Fade */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contact form */
 .contact {
   margin-top: 3rem;
   text-align: center;
 }
 
 .contact h2 {
-  color: #3ddcff;
-  margin-bottom: 0.5rem;
-}
-
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 500px;
-  margin: 1rem auto;
-}
-
-.contact input,
-.contact textarea {
-  padding: 0.7rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: none;
-  background-color: #111;
-  color: #fff;
-  resize: vertical;
-}
-
-.contact textarea {
-  height: 120px;
-}
-
-.contact button {
-  padding: 0.7rem;
-  background-color: #3ddcff;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contact button:hover {
-  background-color: #21b7e2;
-}
-
-.email-visible {
-  margin-top: 2rem;
-  font-size: 0.95rem;
-  color: #aaa;
-  opacity: 0.7;
-}
+  color:
