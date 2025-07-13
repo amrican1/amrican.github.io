@@ -78,14 +78,13 @@ h1 {
   }
 }
 
-/* Videos container */
+/* Videos */
 .videos {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* Videos styling corregido */
 .videos iframe {
   width: 100%;
   max-width: 720px;
@@ -105,7 +104,7 @@ h1 {
   z-index: 2;
 }
 
-/* Assets (SFX pack) */
+/* Assets */
 .assets {
   margin-top: 3rem;
   text-align: center;
@@ -143,28 +142,6 @@ h1 {
   box-shadow: 0 0 20px #3ddcffaa;
 }
 
-.asset-audio {
-  margin: 1.5rem 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
-  justify-items: center;
-}
-
-.asset-audio p {
-  grid-column: 1 / -1;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  color: #3ddcff;
-}
-
-audio {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 4px;
-}
-
-/* Botones para links */
 .asset-links {
   display: flex;
   gap: 1rem;
@@ -187,7 +164,7 @@ audio {
   background-color: #21b7e2;
 }
 
-/* Footer redes sociales */
+/* Footer */
 footer {
   margin-top: 2rem;
   display: flex;
