@@ -49,16 +49,17 @@ h1 {
   font-size: 1rem;
   opacity: 0.9;
   line-height: 1.5;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #3ddcff;
-  width: 0;
-  animation: typing 3.5s steps(60, end) forwards, blinkCaret 0.75s step-end infinite;
   margin: 0 auto;
   max-width: 600px;
   position: relative;
   z-index: 3;
+  white-space: normal; /* permite saltos de línea normales */
+  overflow: visible;   /* muestra todo el texto */
+  border-right: none;  /* elimina el cursor */
+  width: auto;         /* muestra todo el texto */
+  animation: none;     /* desactiva la animación */
 }
+
 
 @keyframes typing {
   from {
@@ -257,3 +258,4 @@ footer a:hover {
     gap: 1rem;
   }
 }
+
